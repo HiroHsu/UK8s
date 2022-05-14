@@ -36,8 +36,9 @@ sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
-su -c 'sh -s' <<EOF
- sh k8s2.sh
+sudo -i <<EOF
+ cat > /etc/default/kubelet 
+KUBELET_EXTRA_ARGS=--feature-gates="AllAlpha=false,RunAsGroup=true" --container-runtime=remote --cgroup-driver=systemd --container-runtime-endpoint='unix:///var/run/crio/crio.sock' --runtime-request-timeout=5m
 EOF
 
 sudo -s <<EOF
