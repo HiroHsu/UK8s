@@ -1,17 +1,15 @@
 
 sudo -i
 kubeadm init
+export KUBECONFIG=/etc/kubernetes/admin.conf
 
 whoami
-
 exit
+echo "Exit root"
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-sudo -i
-
-export KUBECONFIG=/etc/kubernetes/admin.conf
-
+echo "Check"
 kubectl get nodes
