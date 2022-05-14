@@ -1,13 +1,8 @@
 # Step
-sudo -i
-wget https://raw.githubusercontent.com/HiroHsu/UK8s/main/Ubuntu%2020.04/RunOnMaster/master.sh
-sh master.sh
+wget -O master.sh https://raw.githubusercontent.com/HiroHsu/UK8s/main/Ubuntu%2020.04/k8s124.sh
+sh k8s124.sh
 
 
-1. Etcd
-2. CRI-O
-3. K8s
-4. Set Master or Node
 
 save message like this
 
