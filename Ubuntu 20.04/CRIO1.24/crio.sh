@@ -34,7 +34,7 @@ sudo sysctl --system
 export VERSION=1.24
 export OS=xUbuntu_20.04
 
-sudo -s <<EOF
+
 
 echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/ /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
 echo "deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$VERSION/$OS/ /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.list
@@ -48,4 +48,3 @@ sudo apt-get install cri-o cri-o-runc
 systemctl daemon-reload
 systemctl start crio
 
-EOF
