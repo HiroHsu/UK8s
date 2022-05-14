@@ -1,5 +1,5 @@
 
-
+sudo -i
 kubeadm init
 
 whoami
