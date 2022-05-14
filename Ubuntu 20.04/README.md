@@ -1,5 +1,6 @@
 # Step
-wget -O master.sh https://raw.githubusercontent.com/HiroHsu/UK8s/main/Ubuntu%2020.04/k8s124.sh
+wget --no-cache -O k8s124.sh https://raw.githubusercontent.com/HiroHsu/UK8s/main/Ubuntu%2020.04/k8s124.sh
+
 sh k8s124.sh
 
 
