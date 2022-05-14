@@ -1,4 +1,7 @@
-sudo -i
+
+sudo su
+whoami
+
 
 wget https://raw.githubusercontent.com/HiroHsu/UK8s/main/Ubuntu%2020.04/CRIO1.24/crio.sh
 wget https://raw.githubusercontent.com/HiroHsu/UK8s/main/Ubuntu%2020.04/K8s1.24/K8s.sh
