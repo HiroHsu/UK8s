@@ -34,13 +34,13 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 
 
-sudo -s <<EOF
+
 
 cat > /etc/default/kubelet <<EOF
 KUBELET_EXTRA_ARGS=--feature-gates="AllAlpha=false,RunAsGroup=true" --container-runtime=remote --cgroup-driver=systemd --container-runtime-endpoint='unix:///var/run/crio/crio.sock' --runtime-request-timeout=5m
 EOF
-
-sudo systemctl enable kubelet
-sudo systemctl enable crio
+sudo -s <<EOF
+systemctl enable kubelet
+systemctl enable crio
 
 EOF
