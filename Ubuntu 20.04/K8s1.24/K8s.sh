@@ -22,6 +22,7 @@ cat <<EOF | sudo tee /etc/fstab
 #/swap.img       none    swap    sw      0       0
 EOF
 sudo swapoff -a
+#!/bin/bash
 sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
@@ -32,9 +33,14 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
 
+
+sudo -s <<EOF
+
 cat > /etc/default/kubelet <<EOF
 KUBELET_EXTRA_ARGS=--feature-gates="AllAlpha=false,RunAsGroup=true" --container-runtime=remote --cgroup-driver=systemd --container-runtime-endpoint='unix:///var/run/crio/crio.sock' --runtime-request-timeout=5m
 EOF
 
-systemctl enable kubelet
-systemctl enable crio
+sudo systemctl enable kubelet
+sudo systemctl enable crio
+
+EOF
