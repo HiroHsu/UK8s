@@ -6,6 +6,8 @@ wget --no-cache -O k8s124.sh https://raw.githubusercontent.com/HiroHsu/UK8s/main
 
 sh k8s124.sh
 
+kubeadm init
+
 #### 看到下面訊息表示成功安裝
 Your Kubernetes control-plane has initialized successfully!
 
@@ -45,6 +47,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 #### 若作為 NODE 則執行下面指令
 ((這是範例，請從安裝後顯示的資訊複製))
+
 kubeadm join 192.168.106.146:6443 --token 4ivyeh.kbv525nfn93iar1j \
         --discovery-token-ca-cert-hash sha256:8db98fbff2adf4682d9019d88faaa6d449b7ef6
 
